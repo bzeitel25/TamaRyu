@@ -290,7 +290,16 @@ body {
 }
 
 /* Image Sprites and Stage Sizes */
-.sprite-egg { background-image: url('egg.png'); width: 80px; height: 80px; margin-top: 30px; }
+.sprite-egg { background-image: url('egg.png'); width: 80px; height: 80px; margin-top: 30px; transform-origin: bottom center; animation: egg-wobble 4s infinite; }
+
+@keyframes egg-wobble {
+    0% { transform: rotate(0deg); }
+    5% { transform: rotate(-10deg); }
+    10% { transform: rotate(10deg); }
+    15% { transform: rotate(-5deg); }
+    20% { transform: rotate(0deg); }
+    100% { transform: rotate(0deg); }
+}
 .sprite-baby { background-image: url('dragon.png'); width: 120px; height: 120px; }
 .sprite-child { background-image: url('child.png'); width: 150px; height: 150px; }
 .sprite-teen { background-image: url('teen.png'); width: 190px; height: 190px; }

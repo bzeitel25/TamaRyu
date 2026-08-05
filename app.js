@@ -1032,13 +1032,13 @@ dfImg.src = 'adult.png';
 
 function startDragonFire() {
     closeMenu();
-    if (state.energy < 20) return showNotification(Too tired to play.);
+    if (state.energy < 20) return showNotification("Too tired to play.");
     state.energy -= 20;
     
     isMinigameActive = 'dragonfire';
     dfState.active = true;
     els.minigameOverlay.classList.remove('hidden');
-    document.getElementById('minigame-title').innerText = Dragon Fire;
+    document.getElementById('minigame-title').innerText = "Dragon Fire";
     mgCoinsWon = 0;
     els.minigameCoins.innerText = '0';
     
