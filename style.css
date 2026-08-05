@@ -401,11 +401,13 @@ body {
 /* --- Action Menu --- */
 #action-menu {
     display: flex;
-    justify-content: space-around;
-    padding: 20px 10px 30px;
+    justify-content: space-evenly;
+    padding: 20px 0 30px;
     background: rgba(255, 255, 255, 0.03);
     border-top: 1px solid var(--panel-border);
     backdrop-filter: blur(15px);
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .action-btn {
