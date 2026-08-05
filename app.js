@@ -106,6 +106,7 @@ function handleOfflineProgress() {
         for (let i = 0; i < ticksPassed; i++) {
             tick(true);
         }
+        state.lastUpdate = now;
         updateUI();
         if (ticksPassed > 60) {
             showNotification(`Welcome back! ${ticksPassed} seconds passed.`);
@@ -688,6 +689,8 @@ function bindEvents() {
             if (!state.isSleeping && state.stage !== 'egg') {
                 toggleSleep();
             }
+        } else if (document.visibilityState === "visible") {
+            handleOfflineProgress();
         }
     });
     
