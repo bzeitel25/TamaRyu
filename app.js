@@ -928,10 +928,10 @@ function exitDragonGlide() {
     if (mgCoinsWon > 0) {
         state.coins += mgCoinsWon;
         state.happiness = Math.min(100, state.happiness + mgCoinsWon * 2);
-        showNotification(You won  + mgCoinsWon +  ??!);
-        showEmote('??');
+        showNotification("You won " + mgCoinsWon + " 🪙!");
+        showEmote('🪙');
     } else {
-        showNotification(Minigame exited.);
+        showNotification("Minigame exited.");
     }
     updateUI();
     saveState();
@@ -1128,10 +1128,10 @@ function exitDragonFire() {
     if (mgCoinsWon > 0) {
         state.coins += mgCoinsWon;
         state.happiness = Math.min(100, state.happiness + mgCoinsWon * 2);
-        showNotification(You won  + mgCoinsWon +  ??!);
-        showEmote('??');
+        showNotification("You won " + mgCoinsWon + " 🪙!");
+        showEmote('🪙');
     } else {
-        showNotification(Minigame exited.);
+        showNotification("Minigame exited.");
     }
     updateUI();
     saveState();
