@@ -80,20 +80,24 @@ function init() {
 }
 
 function loadState() {
-    const saved = localStorage.getItem('tamaryu_state');
-    if (saved) {
-        try {
+    try {
+        const saved = localStorage.getItem('tamaryu_state');
+        if (saved) {
             state = { ...DEFAULT_STATE, ...JSON.parse(saved) };
-        } catch (e) {
-            console.error("Save corrupted, starting fresh.");
         }
+    } catch (e) {
+        console.error("Local storage error (might be blocked on file://), starting fresh.", e);
     }
 }
 
 function saveState() {
     if (!isMinigameActive) {
         state.lastUpdate = Date.now();
-        localStorage.setItem('tamaryu_state', JSON.stringify(state));
+        try {
+            localStorage.setItem('tamaryu_state', JSON.stringify(state));
+        } catch (e) {
+            // Ignore if localStorage is unavailable
+        }
     }
 }
 
