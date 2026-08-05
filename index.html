@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>TamaRyu - Dragon Companion</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+    <div id="app-container">
+        <!-- Top Stats Bar -->
+        <header id="stats-bar">
+            <div class="stat">
+                <span class="stat-icon">🍖</span>
+                <div class="stat-bar-bg"><div class="stat-bar-fill" id="bar-hunger"></div></div>
+            </div>
+            <div class="stat">
+                <span class="stat-icon">⚾</span>
+                <div class="stat-bar-bg"><div class="stat-bar-fill" id="bar-happiness"></div></div>
+            </div>
+            <div class="stat">
+                <span class="stat-icon">⚡</span>
+                <div class="stat-bar-bg"><div class="stat-bar-fill" id="bar-energy"></div></div>
+            </div>
+            <div class="stat">
+                <span class="stat-icon">❤️</span>
+                <div class="stat-bar-bg"><div class="stat-bar-fill" id="bar-health"></div></div>
+            </div>
+            <div class="stat">
+                <span class="stat-icon">🪙</span>
+                <span id="coin-counter" style="font-weight: bold;">0</span>
+            </div>
+        </header>
+
+        <main id="game-display">
+            <!-- Dynamic Background will be applied to #environment -->
+            <div id="environment" class="bg-cave">
+                <div id="floor-area"></div>
+                <!-- Poops will spawn here -->
+                <div id="poop-container"></div>
+                <!-- The Dragon Sprite -->
+                <div id="dragon-container">
+                    <div id="emote-bubble" class="hidden"></div>
+                    <div id="dragon-sprite" class="sprite-egg bounce"></div>
+                </div>
+            </div>
+            <!-- Notification Toast -->
+            <div id="notification" class="hidden"></div>
+        </main>
+
+        <!-- Action Menu -->
+        <nav id="action-menu">
+            <button class="action-btn" id="btn-feed">
+                <span class="icon">🍖</span>
+                <span class="label">Feed</span>
+            </button>
+            <button class="action-btn" id="btn-play">
+                <span class="icon">⚾</span>
+                <span class="label">Play</span>
+            </button>
+            <button class="action-btn" id="btn-sleep">
+                <span class="icon">🌙</span>
+                <span class="label">Sleep</span>
+            </button>
+            <button class="action-btn" id="btn-clean">
+                <span class="icon">🧽</span>
+                <span class="label">Clean</span>
+            </button>
+            <button class="action-btn" id="btn-heal">
+                <span class="icon">💊</span>
+                <span class="label">Heal</span>
+            </button>
+            <button class="action-btn" id="btn-shop">
+                <span class="icon">🛒</span>
+                <span class="label">Shop</span>
+            </button>
+            <button class="action-btn" id="btn-menu">
+                <span class="icon">⚙️</span>
+                <span class="label">Menu</span>
+            </button>
+        </nav>
+    </div>
+
+    <!-- Modals for sub-menus -->
+    <div id="modal-overlay" class="hidden">
+        <div id="modal-content" class="glass-panel">
+            <div id="modal-header">
+                <h2 id="modal-title">Menu</h2>
+                <div id="modal-coins-display" class="hidden">🪙 <span id="modal-coins-val">0</span></div>
+            </div>
+            <div id="modal-options"></div>
+            <button id="modal-close" class="action-btn" style="width: 100%; margin-top: 15px;">Close</button>
+        </div>
+    </div>
+
+    <!-- Minigame Overlay -->
+    <div id="minigame-overlay" class="hidden">
+        <div id="minigame-header">
+            <h3 id="minigame-title">Minigame</h3>
+            <span>Coins Won: <span id="minigame-coins">0</span></span>
+            <button id="btn-exit-minigame">Exit</button>
+        </div>
+        <canvas id="minigame-canvas"></canvas>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
